@@ -2,16 +2,19 @@
   "name": "webpack5-full-project-setup",
   "version": "1.0.0",
   "main": "index.js",
-  "private":"true",
+  "private": "true",
   "license": "MIT",
   "devDependencies": {
+    "@babel/core": "^7.14.8",
+    "@babel/preset-env": "^7.14.9",
+    "babel-loader": "^8.2.2",
     "webpack": "^5.48.0",
     "webpack-cli": "^4.7.2",
     "webpack-dev-server": "^3.11.2"
   },
   "scripts": {
-    "start" : "webpack serve",
-    "watch":"webpack --watch",
-    "build" : "webpack"
+    "start": "webpack serve",
+    "watch": "webpack --watch",
+    "build": "webpack"
   }
 }
