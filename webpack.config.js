@@ -11,10 +11,13 @@ const MiniCSSExtractPlugin = require('mini-css-extract-plugin')
 module.exports = {
   mode: mode,
   target: target,
+  resolve: {
+    extensions: ['.js', '.jsx'],
+  },
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.jsx?$/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
