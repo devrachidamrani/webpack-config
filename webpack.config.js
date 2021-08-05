@@ -18,8 +18,8 @@ module.exports = {
         },
       },
       {
-        test: /\.css$/i,
-        use: [MiniCSSExtractPlugin.loader, 'css-loader'],
+        test: /\.s?css$/i,
+        use: [MiniCSSExtractPlugin.loader, 'css-loader', 'sass-loader'],
       },
     ],
   },
