@@ -14,6 +14,9 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx'],
   },
+  output: {
+    assetModuleFilename: 'images/[hash][ext][query]',
+  },
   module: {
     rules: [
       {
@@ -26,11 +29,25 @@ module.exports = {
       {
         test: /\.(s[ac]|c)ss$/i,
         use: [
-          MiniCSSExtractPlugin.loader,
+          {
+            loader: MiniCSSExtractPlugin.loader,
+            options: {
+              publicPath: '',
+            },
+          },
           'css-loader',
           'postcss-loader',
           'sass-loader',
         ],
+      },
+      {
+        test: /\.(png|jpe?g|gif|svg)$/i,
+        type: 'asset',
+        // parser: {
+        //   dataUrlCondition: {
+        //     maxSize: 30 * 1024,
+        //   },
+        // },
       },
     ],
   },
