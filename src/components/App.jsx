@@ -10,7 +10,7 @@ const App = () => {
       </section>
         <main>
           <section>
-            <h1> Oh haai React!</h1>
+            <h1> Oh haai React! Voilàà the site is now deployed!!</h1>
           </section>
           <img src={Sword} alt="sword" width="250"/>
           <img src={SwordSvg} alt="sword" width="250"/>
