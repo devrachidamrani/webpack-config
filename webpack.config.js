@@ -6,10 +6,19 @@ const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin'
 
 let mode = 'development'
 let target = 'web'
+const plugins = [
+  new CleanWebpackPlugin(),
+  new MiniCSSExtractPlugin(),
+  new HtmlWebpackPlugin({
+    template: './src/index.html',
+  }),
+]
 
 if (process.env.NODE_ENV === 'production') {
   mode = 'production'
   target = 'browserslist'
+} else {
+  plugins.push(new ReactRefreshWebpackPlugin())
 }
 
 module.exports = {
@@ -62,12 +71,5 @@ module.exports = {
     hot: true,
   },
   devtool: 'source-map',
-  plugins: [
-    new CleanWebpackPlugin(),
-    new MiniCSSExtractPlugin(),
-    new HtmlWebpackPlugin({
-      template: './src/index.html',
-    }),
-    new ReactRefreshWebpackPlugin(),
-  ],
+  plugins: plugins,
 }
